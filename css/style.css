@@ -1,5 +1,4 @@
     body {margin: 0px; padding: 0px;}
-    button { margin-top: 30px;}
     
     /* LAYOUT */
     .header {background-color: #1EE2FA;color: rgb(255, 255, 255);padding: 3px;font-size: 20px;font-weight: bold;text-align: center;}    
@@ -20,6 +19,7 @@
     .box-scenario#box-inputs-pink{background-color: #BC52DE;}
     
     .btn.btn-primary, .btn.btn-primary:active, .btn.btn-primary:hover, .btn.btn-primary:focus{
+        margin-top: 30px;
         font-size:13px;
         border:none;
         background: linear-gradient(0deg, rgba(189, 189, 189, 0.3), rgba(189, 189, 189, 0.3)), #1EE2FA !important;

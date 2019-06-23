@@ -54,20 +54,23 @@ function treatError(type, boxName = null, boxValues = new Array()){
     // 2 - Performance Validation Error
     switch (type) {
         case 1:
-            $.alert({title: 'Atencao!', content: ''+
+            $.alert({title: 'Atenção!', content: ''+
+                '<div style="font-size:13px;">'+ 
                 'A soma dos valores tem que dar 100%.<br/>'+ 
-                'Voce forneceu para os cenarios: <br/>'+ 
+                'Você forneceu para os cenarios: <br/>'+ 
                 'Otimista: '+ optimistic+'%<br/>'+
                 'Neutro: '+ neutral+'%<br/>'+
                 'Pessimista: '+ pessimistic+'%<br/>'+
                 '<hr/>'+
                 'Total: '+(optimistic + neutral + pessimistic)+'% <br/>'+
-                'Restam ou ultrapassou: '+ Math.abs((100-(optimistic + neutral + pessimistic)))
+                (((100-(optimistic + neutral + pessimistic))>0) ? 'Restam: '+(100-(optimistic + neutral + pessimistic)) : 'Ultrapassou: '+ Math.abs((100-(optimistic + neutral + pessimistic))))
+                +'</div>'
             });
             break;
         case 2:
-            $.alert({title: 'Atencao!', content: ''+
-                'Percebemos um erro na validacao do Desempenho '+boxName+'.<br/>'+ 
+            $.alert({title: 'Atenção!', content: ''+
+                '<div style="font-size:13px;">'+ 
+                'Percebemos um erro na validação do Desempenho '+boxName+'.<br/>'+ 
                 'A soma dos valores tem que dar 100%.<br/>'+ 
                 'Foi fornecido para os desempenhos: <br/>'+ 
                 'Bom: '+ boxValues[0]+'%<br/>'+
@@ -75,11 +78,12 @@ function treatError(type, boxName = null, boxValues = new Array()){
                 'Fraco: '+ boxValues[2]+'%<br/>'+
                 '<hr/>'+
                 'Total: '+(boxValues[0] + boxValues[1] + boxValues[2])+'% <br/>'+
-                'Restam ou ultrapassou: '+ Math.abs((100-(boxValues[0] + boxValues[1] + boxValues[2])))
+                (((100-(boxValues[0] + boxValues[1] + boxValues[2]))>0) ? 'Restam: '+(100-(boxValues[0] + boxValues[1] + boxValues[2])) : 'Ultrapassou: '+ Math.abs((100-(boxValues[0] + boxValues[1] + boxValues[2]))))
+                +'</div>'
             });
             break;
         default:
-            $.alert({title: 'Atencao!', content: 'Algo deu errado!'});
+            $.alert({title: 'Atenção!', content: 'Algo deu errado!'});
             break;
     }
 }
@@ -106,9 +110,12 @@ function calculatePerformance(){
 function setPercentagesGoodAndWeak(good, weak, regular){
     if(good > weak || regular > weak){
         $('#result-screen').addClass('positive');
+        $('#result-phrase').text('RECOMENDA');    
     }else{
-        $('#result-screen').addClass('negative');        
+        $('#result-screen').addClass('negative');    
+        $('#result-phrase').text('NÃO RECOMENDA');    
     }
     $('#result-chance-good').text(good+'%');
     $('#result-chance-weak').text(weak+'%');
+    
 }
