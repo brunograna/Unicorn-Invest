@@ -1,5 +1,5 @@
 /**
- * Execute automated tests
+ * Help to execute automated tests
  */
 function populateFields(){
     $('#scenario-optimistic').val(40);
