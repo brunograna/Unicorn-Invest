@@ -35,8 +35,8 @@ function showView(code){
             $('#home-screen, #result-screen').hide();
             break;
         case 3:
-            $('#home-screen').fadeIn();
-            $('#calculation-screen, #result-screen').hide();
+            $('#result-screen').fadeIn();
+            $('#calculation-screen, #home-screen').hide();
             break;    
         default:
             $('#home-screen').fadeIn();
@@ -82,4 +82,33 @@ function treatError(type, boxName = null, boxValues = new Array()){
             $.alert({title: 'Atencao!', content: 'Algo deu errado!'});
             break;
     }
+}
+
+/**
+ * Uses the global variable to calculate the performance
+ */
+function calculatePerformance(){
+    let percentages = {weak: 0, good: 0, regular: 0};
+
+    percentages.good = ( (optimistic*optimisticGood) + (neutral*neutralGood) + (pessimistic*pessimisticGood) )/100;
+    percentages.regular = ( (optimistic*optimisticRegular) + (neutral*neutralRegular) + (pessimistic*pessimisticRegular) )/100;
+    percentages.weak = ( (optimistic*optimisticWeak) + (neutral*neutralWeak) + (pessimistic*pessimisticWeak) )/100;
+
+    return percentages;
+}
+
+/**
+ * 
+ * @param {Number} good % of the performance be good
+ * @param {Number} weak % of the performance be weak
+ * @param {Number} regular % of the performance be regular
+ */
+function setPercentagesGoodAndWeak(good, weak, regular){
+    if(good > weak || regular > weak){
+        $('#result-screen').addClass('positive');
+    }else{
+        $('#result-screen').addClass('negative');        
+    }
+    $('#result-chance-good').text(good+'%');
+    $('#result-chance-weak').text(weak+'%');
 }

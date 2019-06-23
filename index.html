@@ -13,7 +13,7 @@
 
 <body>
     <div class="fit-screen-container" id="home-screen" style="display: none">
-        <div class="box1">
+        <div class="screen-template">
             <div class="header">
                 <p class="mb-0">Unicorn Invest</p>
             </div>
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <div class="fit-screen-container" id="calculation-screen">
+    <div class="fit-screen-container" id="calculation-screen" >
         <div class="screen-template">
             <div class="header">
                 <p class="mb-0">Unicorn Invest</p>
@@ -129,27 +129,45 @@
 
 
 
-    <div class="fit-screen-container" id="result-screen" style="display: none;">
-        <div class="box1">
+    <div class="fit-screen-container negative" id="result-screen" style="display: none;">
+        <div class="screen-template">
             <div class="header">
                 <p class="mb-0">Unicorn Invest</p>
             </div>
-            <div>
-                <i class="far fa-thumbs-up fa-10x"></i>
-                <p> Nosso Unicornio</p>
-                <h2>RECOMENDA</h2>
-                a compra desta ação
-            </div>
 
-            <div>
+            <svg id="result-thumbs" width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.70834 35.875H8.54168V15.375H1.70834V35.875ZM39.2917 17.0833C39.2917 15.2042 37.7542 13.6667 35.875 13.6667H25.0954L26.7183 5.85959L26.7696 5.31293C26.7696 4.61251 26.4792 3.96334 26.0179 3.50209L24.2071 1.70834L12.9663 12.9663C12.3342 13.5813 11.9583 14.4354 11.9583 15.375V32.4583C11.9583 34.3375 13.4958 35.875 15.375 35.875H30.75C32.1679 35.875 33.3808 35.0208 33.8933 33.7908L39.0525 21.7471C39.2063 21.3542 39.2917 20.9442 39.2917 20.5V17.0833Z" fill="#9FBC4C"/>
+            </svg>
+                
+            <div class="result-phrase-box">
+                <span class="mb-0"> Nosso Unicornio</span>
+                <h2 id="result-phrase" class="my-0 py-0">RECOMENDA</h2>
+                <span class="mb-0"> a compra desta ação</span>
+            </div>                
+
+            <div class="result-chances">
                 <p>Chances de o desempenho ser:</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="result-chance-box">
+                            <span class="result-chance-label">Bom</span>
+                            <span class="result-chance-value" id="result-chance-good">56%</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="result-chance-box">
+                            <span class="result-chance-label">Ruim</span>
+                            <span class="result-chance-value" id="result-chance-weak">44%</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="unicornio">
-                <img src="img/uni.gif">
+                <img src="img/uni.gif" class="img-fluid d-block mx-auto" id="unicornio-gif-result">
             </div>
             <div>
-                <p>* Valores referentes à data da última atualização e podem sofrer alterações de acordo com o mercado</p>
+                <p id="result-caption">* Valores referentes à data da última atualização e podem sofrer alterações de acordo com o mercado</p>
             </div>
         </div>
     </div>
@@ -186,6 +204,7 @@
         <script src="./libs/bootstrap/popper.min.js"></script>
         <script src="./libs/bootstrap/bootstrap.min.js"></script>
         <script src="./libs/jquery-confirm/jquery-confirm.min.js"></script>
+        <script src="./tests/automatizate.js"></script>
         <script src="./js/functions.js"></script>
         <script src="./js/app.js"></script>
 </body>

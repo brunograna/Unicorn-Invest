@@ -33,6 +33,8 @@ $(document).ready(function () {
                     pessimisticWeak = getValueFromInput($('#pessimistic-weak'));
 
                     if(validatePercentage( [pessimisticGood, pessimisticRegular, pessimisticWeak] )){
+                        let percentages = calculatePerformance();
+                        setPercentagesGoodAndWeak(percentages.good, percentages.weak, percentages.regular);
                         showView(3);
                     }else{
                         treatError(2, 'Pessimista', [pessimisticGood, pessimisticRegular, pessimisticWeak]);

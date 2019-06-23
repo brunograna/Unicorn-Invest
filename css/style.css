@@ -1,71 +1,24 @@
-    body {
-        margin: 0px;
-        padding: 0px;
-    }
+    body {margin: 0px; padding: 0px;}
+    button { margin-top: 30px;}
     
-    .header {
-        background-color: #1EE2FA;
-        color: rgb(255, 255, 255);
-        padding: 3px;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-    }
-    
-    /* img {
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto
-    } */
-    
-    button {
-        margin-top: 30px;
-    }
-    
-    .fit-screen-container {
-        /* width: 100vw;
-        height: 100vh; */
-        padding: 10px 50px 50px;
-        background: rgb(186, 233, 239);
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    
+    /* LAYOUT */
+    .header {background-color: #1EE2FA;color: rgb(255, 255, 255);padding: 3px;font-size: 20px;font-weight: bold;text-align: center;}    
+    .fit-screen-container {min-height: 100vh; padding: 10px 50px 50px; background: rgb(186, 233, 239); display: flex; flex-direction: row; justify-content: center; align-items: center;}
     .screen-template {max-width: 360px;background-color: #fff;text-align: center;padding: 0 0 25px;}
-    /* .screen-template img { max-width: 30%;margin-left: -180px;} */
     
-    /* .conteudo {
-        display: table;
-    }
-    
-    .unicornio {
-        display: table-cell;
-    } */
-    
-    /* .texto {
-        color: #242424;
-        max-width: 200px;
-        display: table-cell;
-        float: left;
-        margin-top: -80px;
-        margin-left: 150px;
-        font-size: 13px;
-    } */
 
+    /* CALCULATION SCREEN */
     #unicornio-gif-top{max-height: 100px;}
     .description{font-size: 12px;text-align: left;padding-top: 15px;}
     
     .scenario-percentage-box label{font-size: 12px;color: #333;}
-
+    
     .box-scenario{color: #fff; text-align: center; padding: 10px 5px 10px; font-size: 13px;}
     .box-scenario p{margin-bottom: 5px;text-align: left;padding: 0 25px;}
     .box-scenario#box-inputs-green {background-color: #9FBC4C;}    
     .box-scenario#box-inputs-orange {background-color: #FB9D10;}    
     .box-scenario#box-inputs-pink{background-color: #BC52DE;}
-
+    
     .btn.btn-primary, .btn.btn-primary:active, .btn.btn-primary:hover, .btn.btn-primary:focus{
         font-size:13px;
         border:none;
@@ -73,28 +26,37 @@
         box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.12) !important;
         border-radius: 2px;
     }
-/* 
 
+    /* RESULT SCREEN */
+    #unicornio-gif-result{max-width: 80%;}
+    #result-caption{font-size: 10px;text-align: left;padding: 0 10px;}
+    #result-thumbs{margin: 20px 0 0;}
+    #result-thumbs.positive{transform: rotate(0deg);}
+    #result-thumbs.positive path{fill: #9FBC4C;}
+    #result-thumbs.negative{transform: rotate(180deg);}
+    #result-thumbs.negative path{fill: #BC52DE;}   
+
+    #result-screen .result-phrase-box{display: block;margin: 0 auto;padding: 25px 0 30px;}
+    #result-screen .result-phrase-box span{display: block;font-size: 14px;line-height: 6px;font-weight: 500;}
+    #result-screen .result-phrase-box #result-phrase{text-align: center;font-weight: bold;}
+
+    #result-screen .result-chances p{font-size: 12px;margin: 20px 0 20px;font-weight: 500;}
+    #result-screen .result-chance-box{display: block;text-align: center;}
+    #result-screen .result-chance-box .result-chance-label{display: block;font-size: 16px;}
+    #result-screen .result-chance-box .result-chance-value{display: block;font-size: 14px;font-weight: bold;}
+    #result-screen .result-chance-box .result-chance-value#result-chance-good{color: #9FBC4C;}
+    #result-screen .result-chance-box .result-chance-value#result-chance-weak{color: #BC52DE;}
+
+    #result-screen.negative .result-phrase-box #result-phrase{color: #BC52DE;}
+    #result-screen.negative #result-thumbs {transform: rotate(180deg);}
+    #result-screen.negative #result-thumbs path{fill: #BC52DE;}   
     
-    div.section2 form {
-        margin-left: 70px;
-    }
-    
-    div.section3 form {
-        margin-left: 70px;
-    }
-    
-    div.section4 form {
-        margin-left: 70px;
-    } */
+    #result-screen.positive .result-phrase-box #result-phrase{color: #9FBC4C;}
+    #result-screen.positive #result-thumbs {transform: rotate(0deg);}
+    #result-screen.positive #result-thumbs path{fill: #9FBC4C;}
+
 
     /* Remove INPUT TYPE NUMBER STYLES FROM BROWSER */
-    input[type="number"] {
-        -webkit-appearance: textfield;
-           -moz-appearance: textfield;
-                appearance: textfield;
-      }
-      input[type=number]::-webkit-inner-spin-button, 
-      input[type=number]::-webkit-outer-spin-button { 
-        -webkit-appearance: none;
-      }
+    input[type="number"] {-webkit-appearance: textfield; -moz-appearance: textfield; appearance: textfield;}
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;}
