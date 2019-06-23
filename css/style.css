@@ -1,0 +1,100 @@
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .header {
+        background-color: #1EE2FA;
+        color: rgb(255, 255, 255);
+        padding: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    /* img {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto
+    } */
+    
+    button {
+        margin-top: 30px;
+    }
+    
+    .fit-screen-container {
+        /* width: 100vw;
+        height: 100vh; */
+        padding: 10px 50px 50px;
+        background: rgb(186, 233, 239);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .screen-template {max-width: 360px;background-color: #fff;text-align: center;padding: 0 0 25px;}
+    /* .screen-template img { max-width: 30%;margin-left: -180px;} */
+    
+    /* .conteudo {
+        display: table;
+    }
+    
+    .unicornio {
+        display: table-cell;
+    } */
+    
+    /* .texto {
+        color: #242424;
+        max-width: 200px;
+        display: table-cell;
+        float: left;
+        margin-top: -80px;
+        margin-left: 150px;
+        font-size: 13px;
+    } */
+
+    #unicornio-gif-top{max-height: 100px;}
+    .description{font-size: 12px;text-align: left;padding-top: 15px;}
+    
+    .scenario-percentage-box label{font-size: 12px;color: #333;}
+
+    .box-scenario{color: #fff; text-align: center; padding: 10px 5px 10px; font-size: 13px;}
+    .box-scenario p{margin-bottom: 5px;text-align: left;padding: 0 25px;}
+    .box-scenario#box-inputs-green {background-color: #9FBC4C;}    
+    .box-scenario#box-inputs-orange {background-color: #FB9D10;}    
+    .box-scenario#box-inputs-pink{background-color: #BC52DE;}
+
+    .btn.btn-primary, .btn.btn-primary:active, .btn.btn-primary:hover, .btn.btn-primary:focus{
+        font-size:13px;
+        border:none;
+        background: linear-gradient(0deg, rgba(189, 189, 189, 0.3), rgba(189, 189, 189, 0.3)), #1EE2FA !important;
+        box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.12) !important;
+        border-radius: 2px;
+    }
+/* 
+
+    
+    div.section2 form {
+        margin-left: 70px;
+    }
+    
+    div.section3 form {
+        margin-left: 70px;
+    }
+    
+    div.section4 form {
+        margin-left: 70px;
+    } */
+
+    /* Remove INPUT TYPE NUMBER STYLES FROM BROWSER */
+    input[type="number"] {
+        -webkit-appearance: textfield;
+           -moz-appearance: textfield;
+                appearance: textfield;
+      }
+      input[type=number]::-webkit-inner-spin-button, 
+      input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+      }

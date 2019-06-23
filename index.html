@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="https://kit.fontawesome.com/35150ff266.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Unicorn Invest</title>
+</head>
+
+<body>
+    <div class="fit-screen-container" id="home-screen" style="display: none">
+        <div class="box1">
+            <div class="header">
+                <p class="mb-0">Unicorn Invest</p>
+            </div>
+            <div class="section1">
+
+                <img src="img/uni.gif" class="img-fluid d-block mx-auto">
+                <h2>BEM VINDO </h2>
+
+                <p>
+                    Olá, seja bem vindo. Eu sou o Unicornio e irei te ajudar a tirar melhores conclusões sobre investimentos. Clique nos botões para saber mais.
+                </p>
+
+                <button id="home-calculate-risc">Calcular Risco </button>
+                <button id="home-how-works">Como Funciona</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="fit-screen-container" id="calculation-screen">
+        <div class="screen-template">
+            <div class="header">
+                <p class="mb-0">Unicorn Invest</p>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="img/uni.gif" class="img-fluid d-block mx-auto" id="unicornio-gif-top">
+                </div>
+                <div class="col-md-7">
+                    <p class="description"> Digite uma porcentagem para os cenários Otimista, Neutro e Pessimista, lembrando que a soma tem que dar 100%, vai lá...</p>
+                </div>
+            </div>   
+
+            <div class="row justify-content-center mb-3 scenario-percentage-box">
+                <div class="col-md-3">
+                    <label for="scenario-optimistic" class="mb-0">Otimista</label>
+                    <input type="number" class="form-control" name="scenario-optimistic" id="scenario-optimistic" min="1" max="100">
+                </div>
+                <div class="col-md-3">
+                    <label for="scenario-neutral" class="mb-0">Neutro</label>
+                    <input type="number" class="form-control" name="scenario-neutral" id="scenario-neutral" min="1" max="100">
+                </div>
+                <div class="col-md-3">
+                    <label for="scenario-pessimistic" class="mb-0">Pessimista</label>
+                    <input type="number" class="form-control" name="scenario-pessimistic" id="scenario-pessimistic" min="1" max="100">
+                </div>
+            </div>                 
+
+            <div class="box-scenario" id="box-inputs-green">
+                <p>Preencha os campos de desempenho para o cenário <br/><strong>Otimista</strong></p>
+                <form>
+                    <div class="row justify-content-center">
+                        <div class="col-md-3">
+                            <label for="otimista-bom" class="mb-0">Bom</label>
+                            <input type="number" class="form-control" name="otimista-bom" id="otimista-bom" min="1" max="100">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="otimista-regular" class="mb-0">Regular</label>
+                            <input type="number" class="form-control" name="otimista-regular" id="otimista-regular" min="1" max="100">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="otimista-fraco" class="mb-0">Fraco</label>
+                            <input type="number" class="form-control" name="otimista-fraco" id="otimista-fraco" min="1" max="100">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="box-scenario" id="box-inputs-orange">
+                <p>Preencha os campos de desempenho para o cenário <br/><strong>Neutro</strong></p>
+                <form>
+                    <div class="row justify-content-center">
+                        <div class="col-md-3">
+                            <label for="neutro-bom" class="mb-0">Bom</label>
+                            <input type="number" class="form-control" name="neutro-bom" id="neutro-bom" min="1" max="100">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="neutro-regular" class="mb-0">Regular</label>
+                            <input type="number" class="form-control" name="neutro-regular" id="neutro-regular" min="1" max="100">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="neutro-fraco" class="mb-0">Fraco</label>
+                            <input type="number" class="form-control" name="neutro-fraco" id="neutro-fraco" min="1" max="100">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="box-scenario" id="box-inputs-pink">
+                <p>Preencha os campos de desempenho para o cenário <br/><strong>Pessimista</strong></p>
+                <form>
+                    <div class="row justify-content-center">
+                        <div class="col-md-3">
+                            <label for="pessimista-bom" class="mb-0">Bom</label>
+                            <input type="number" name="pessimista-bom" id="pessimista-bom" class="form-control" min="1" max="100">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="pessimista-regular" class="mb-0">Regular</label>
+                            <input type="number" name="pessimista-regular" id="pessimista-regular" class="form-control" min="1" max="100">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="pessimista-fraco" class="mb-0">Fraco</label>
+                            <input type="number" name="pessimista-fraco" id="pessimista-fraco" class="form-control" min="1" max="100">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <button type="button" id="calculate-risc" class="btn btn-primary"><i class="fas fa-dollar-sign"></i>&nbsp; Calcular Risco</button>
+        </div>
+    </div>
+
+
+
+    <div class="fit-screen-container" id="result-screen" style="display: none;">
+        <div class="box1">
+            <div class="header">
+                <p class="mb-0">Unicorn Invest</p>
+            </div>
+            <div>
+                <i class="far fa-thumbs-up fa-10x"></i>
+                <p> Nosso Unicornio</p>
+                <h2>RECOMENDA</h2>
+                a compra desta ação
+            </div>
+
+            <div>
+                <p>Chances de o desempenho ser:</p>
+            </div>
+
+            <div class="unicornio">
+                <img src="img/uni.gif">
+            </div>
+            <div>
+                <p>* Valores referentes à data da última atualização e podem sofrer alterações de acordo com o mercado</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="fit-screen-container" id="result-calculation-negative" style="display: none;">
+        <div class="box1">
+            <div class="header">
+                <p class="mb-0">Unicorn Invest</p>
+            </div>
+            <div>
+                <i class="far fa-thumbs-down fa-10x"></i>
+                <p> Nosso Unicornio</p>
+                <h2>NÃO RECOMENDA</h2>
+                a compra desta ação
+            </div>
+
+            <div>
+                <p>Chances de o desempenho ser:</p>
+            </div>
+
+            <div class="unicornio">
+                <img src="img/uni.gif">
+            </div>
+            <div>
+                <p>* Valores referentes à data da última atualização e podem sofrer alterações de acordo com o mercado</p>
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+        <script src="./js/app.js"></script>
+</body>
+
+</html>
