@@ -10,7 +10,7 @@ function getValueFromInput(elem){
 
 /**
  * 
- * @param {Array} percentages % array os percentages
+ * @param {Array} percentages Array of percentages
  */
 function validatePercentage(percentages){
     let sumPercentage = 0;
@@ -22,7 +22,7 @@ function validatePercentage(percentages){
 
 /**
  *
- * @param {number} code Code to toggle the vision by legend  1:Home | 2:Calculation Screen | 3:Result Screen)
+ * @param {Number} code Code to toggle the vision by legend  1:Home | 2:Calculation Screen | 3:Result Screen)
  */
 function showView(code){
     // Legend
@@ -47,7 +47,7 @@ function showView(code){
 
 /**
  * 
- * @param {number} type Type of error to treat
+ * @param {Number} type Type of error to treat
  */
 function treatError(type, boxName = null, boxValues = new Array()){
     // 1 - Scenario Validation Error
