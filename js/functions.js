@@ -33,6 +33,7 @@ function showView(code){
         case 2:
             $('#calculation-screen').fadeIn();
             $('#home-screen, #result-screen').hide();
+            emptyFieldsCalculationScreen();
             break;
         case 3:
             $('#result-screen').fadeIn();
@@ -108,14 +109,58 @@ function calculatePerformance(){
  * @param {Number} regular % of the performance be regular
  */
 function setPercentagesGoodAndWeak(good, weak, regular){
-    if(good > weak || regular > weak){
-        $('#result-screen').addClass('positive');
-        $('#result-phrase').text('RECOMENDA');    
+    const resultScreen = $('#result-screen');
+    const resultPhrase = $('#result-phrase');
+    const resultThumbs = $('#result-thumbs');
+    if(good > weak || regular > weak){        
+        resultScreen.removeClass('negative').addClass('positive');
+        resultPhrase.text('RECOMENDA');   
+
+        animateCSS('#result-phrase', 'jackInTheBox'); 
+        animateCSS('#result-thumbs', 'rollIn'); 
     }else{
-        $('#result-screen').addClass('negative');    
-        $('#result-phrase').text('NÃO RECOMENDA');    
+        resultScreen.removeClass('positive').addClass('negative');    
+        resultPhrase.text('NÃO RECOMENDA');    
+        resultThumbs.removeClass('rotated');
+
+        animateCSS('#result-phrase', 'wobble'); 
+        animateCSS('#result-thumbs', 'slideInLeft', function(){
+            setTimeout(() => {
+                resultThumbs.addClass('rotated');                
+            }, 1);
+        }); 
     }
     $('#result-chance-good').text(good+'%');
     $('#result-chance-weak').text(weak+'%');
+
+    animateCSS('#result-chance-good', 'slideInLeft');
+    animateCSS('#result-chance-weak', 'slideInRight');
     
+}
+
+/**
+ * 
+ * @param {Eleemnt} element Element to be triggered
+ * @param {String} animationName Animation class name
+ * @param {Function} callback Callback function when animation ends
+ */
+function animateCSS(element, animationName, callback) {
+    const node = document.querySelector(element)  
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
+}
+
+/**
+ * Empty all fields in the calculation screen
+ */
+function emptyFieldsCalculationScreen(){
+    $('input').val(0);
 }

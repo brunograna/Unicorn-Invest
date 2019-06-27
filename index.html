@@ -7,32 +7,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./libs/jquery-confirm/jquery-confirm.min.css">
+    <link rel="stylesheet" href="./libs/animate/animate.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Unicorn Invest</title>
 </head>
 
 <body>
-    <div class="fit-screen-container" id="home-screen" style="display: none">
+    <div class="fit-screen-container" id="home-screen" >
         <div class="screen-template">
             <div class="header">
                 <p class="mb-0">Unicorn Invest</p>
             </div>
-            <div class="section1">
+            <div class="content px-5">
 
-                <img src="img/uni.gif" class="img-fluid d-block mx-auto">
-                <h2>BEM VINDO </h2>
+                <img src="img/uni.gif" class="img-fluid d-block mx-auto" style="max-width: 270px;">
+                <h2 id="home-title">Bem Vindo</h2>
 
                 <p>
                     Olá, seja bem vindo. Eu sou o Unicornio e irei te ajudar a tirar melhores conclusões sobre investimentos. Clique nos botões para saber mais.
                 </p>
 
-                <button id="home-calculate-risc">Calcular Risco </button>
-                <button id="home-how-works">Como Funciona</button>
+                <button id="home-calculate-risc" class="btn btn-primary">Calcular Risco </button>
+                <button id="home-how-works" class="btn btn-primary">Como Funciona</button>
             </div>
         </div>
     </div>
 
-    <div class="fit-screen-container" id="calculation-screen" >
+    <div class="fit-screen-container" id="calculation-screen" style="display: none">
         <div class="screen-template">
             <div class="header">
                 <p class="mb-0">Unicorn Invest</p>
@@ -129,7 +130,7 @@
 
 
 
-    <div class="fit-screen-container negative" id="result-screen" style="display: none;">
+    <div class="fit-screen-container" id="result-screen" style="display: none;">
         <div class="screen-template">
             <div class="header">
                 <p class="mb-0">Unicorn Invest</p>
@@ -173,30 +174,6 @@
     </div>
 
 
-    <div class="fit-screen-container" id="result-calculation-negative" style="display: none;">
-        <div class="box1">
-            <div class="header">
-                <p class="mb-0">Unicorn Invest</p>
-            </div>
-            <div>
-                <i class="far fa-thumbs-down fa-10x"></i>
-                <p> Nosso Unicornio</p>
-                <h2>NÃO RECOMENDA</h2>
-                a compra desta ação
-            </div>
-
-            <div>
-                <p>Chances de o desempenho ser:</p>
-            </div>
-
-            <div class="unicornio">
-                <img src="img/uni.gif">
-            </div>
-            <div>
-                <p>* Valores referentes à data da última atualização e podem sofrer alterações de acordo com o mercado</p>
-            </div>
-
-        </div>
 
         
         <script src="./libs/font-awesome/font-awesome.js"></script>

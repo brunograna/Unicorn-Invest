@@ -10,6 +10,14 @@ window.pessimisticGood = window.pessimisticRegular = window.pessimisticWeak = 0;
 
 
 $(document).ready(function () {    
+
+    $('.header').on('click', function () {
+        showView(1);
+    });
+
+    $('#home-calculate-risc').on('click', function () {
+        showView(2);
+    });
     
     //The App functionality
     $('#calculate-risc').on('click', function(){

@@ -1,10 +1,13 @@
     body {margin: 0px; padding: 0px;}
     
     /* LAYOUT */
-    .header {background-color: #1EE2FA;color: rgb(255, 255, 255);padding: 3px;font-size: 20px;font-weight: bold;text-align: center;}    
+    .header {background-color: #1EE2FA;color: rgb(255, 255, 255);padding: 3px;font-size: 20px;font-weight: bold;text-align: center;cursor: pointer;}    
     .fit-screen-container {min-height: 100vh; padding: 10px 50px 50px; background: rgb(186, 233, 239); display: flex; flex-direction: row; justify-content: center; align-items: center;}
     .screen-template {max-width: 360px;background-color: #fff;text-align: center;padding: 0 0 25px;}
     
+
+    /* HOME */
+    #home-title{font-size: 18px;font-weight: bold;}
 
     /* CALCULATION SCREEN */
     #unicornio-gif-top{max-height: 100px;}
@@ -25,8 +28,12 @@
         background: linear-gradient(0deg, rgba(189, 189, 189, 0.3), rgba(189, 189, 189, 0.3)), #1EE2FA !important;
         box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.12) !important;
         border-radius: 2px;
+        transition: 0.5s;
     }
-
+    .btn.btn-primary:hover{
+        transition: 0.5s;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.24), 0px 0px 10px rgba(0, 0, 0, 0.12) !important;
+    }
     /* RESULT SCREEN */
     #unicornio-gif-result{max-width: 80%;}
     #result-caption{font-size: 10px;text-align: left;padding: 0 10px;}
@@ -48,11 +55,12 @@
     #result-screen .result-chance-box .result-chance-value#result-chance-weak{color: #BC52DE;}
 
     #result-screen.negative .result-phrase-box #result-phrase{color: #BC52DE;}
-    #result-screen.negative #result-thumbs {transform: rotate(180deg);}
+    #result-screen.negative #result-thumbs {transition: 1s !important;}
+    #result-screen.negative #result-thumbs.rotated{transform: rotate(180deg);transition: 1s !important;}
     #result-screen.negative #result-thumbs path{fill: #BC52DE;}   
     
     #result-screen.positive .result-phrase-box #result-phrase{color: #9FBC4C;}
-    #result-screen.positive #result-thumbs {transform: rotate(0deg);}
+    #result-screen.positive #result-thumbs {transform: rotate(0deg);transition: 1s;}
     #result-screen.positive #result-thumbs path{fill: #9FBC4C;}
 
 
@@ -60,3 +68,6 @@
     input[type="number"] {-webkit-appearance: textfield; -moz-appearance: textfield; appearance: textfield;}
     input[type=number]::-webkit-inner-spin-button, 
     input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;}
+
+    input{text-align: center;max-width: 100px;display: block;margin: 0 auto;}
+
