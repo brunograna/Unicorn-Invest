@@ -1,2 +1,2 @@
 # Unicorn Invest
-Projeto da Faculdade para auxiliar em investimentos financeiros.
+Projeto desenvolvido na Faculdade para auxiliar em investimentos financeiros.
