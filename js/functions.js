@@ -112,23 +112,31 @@ function setPercentagesGoodAndWeak(good, weak, regular){
     const resultScreen = $('#result-screen');
     const resultPhrase = $('#result-phrase');
     const resultThumbs = $('#result-thumbs');
-    if(good > weak || regular > weak){        
-        resultScreen.removeClass('negative').addClass('positive');
-        resultPhrase.text('RECOMENDA');   
 
+    if( (regular === 100) || (good === 50 && weak === 50) ){
+        resultScreen.removeClass('negative').addClass('positive');
+        resultPhrase.text('DEIXA VOCÊ ESCOLHER'); 
         animateCSS('#result-phrase', 'jackInTheBox'); 
         animateCSS('#result-thumbs', 'rollIn'); 
     }else{
-        resultScreen.removeClass('positive').addClass('negative');    
-        resultPhrase.text('NÃO RECOMENDA');    
-        resultThumbs.removeClass('rotated');
-
-        animateCSS('#result-phrase', 'wobble'); 
-        animateCSS('#result-thumbs', 'slideInLeft', function(){
-            setTimeout(() => {
-                resultThumbs.addClass('rotated');                
-            }, 1);
-        }); 
+        if(good > weak || regular > weak){        
+            resultScreen.removeClass('negative').addClass('positive');
+            resultPhrase.text('RECOMENDA');   
+    
+            animateCSS('#result-phrase', 'jackInTheBox'); 
+            animateCSS('#result-thumbs', 'rollIn'); 
+        }else{
+            resultScreen.removeClass('positive').addClass('negative');    
+            resultPhrase.text('NÃO RECOMENDA');    
+            resultThumbs.removeClass('rotated');
+    
+            animateCSS('#result-phrase', 'wobble'); 
+            animateCSS('#result-thumbs', 'slideInLeft', function(){
+                setTimeout(() => {
+                    resultThumbs.addClass('rotated');                
+                }, 1);
+            }); 
+        }
     }
     $('#result-chance-good').text(good+'%');
     $('#result-chance-weak').text(weak+'%');
